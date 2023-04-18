@@ -62,9 +62,9 @@ class _BodyState extends State<Body> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  buildDot(),
-                  buildDot(),
-                  buildDot()
+                  // buildDot(),
+                  // buildDot(),
+                  // buildDot()
                 ],
               ),
               SizedBox( height: 50,),
@@ -87,36 +87,37 @@ class _BodyState extends State<Body> {
     );
   }
 
-  buildFutureTextData()=> FutureBuilder<DemoModel>(
-    future: futureModel,
-    builder: (context,snapshot){
-      if(snapshot.hasData)
-      {
-        return buildTextData(snapshot.data!.name!);
-      }
-      else if(snapshot.hasError){
-        return buildTextData("Error");
-      }
-      return CircularProgressIndicator();
-    },
-  );
-  Widget buildTextData(String myText) => Text(
-        "$myText",
-        textAlign: TextAlign.center,
-        style: TextStyle(
-            fontSize: 25.00, fontWeight: FontWeight.w500, color: Colors.purple),
-      );
+  // buildFutureTextData()=> FutureBuilder<DemoModel>(
+  //   future: futureModel,
+  //   builder: (context,snapshot){
+  //     if(snapshot.hasData)
+  //     {
+  //       return buildTextData(snapshot.data!.name!);
+  //     }
+  //     else if(snapshot.hasError){
+  //       return buildTextData("Error");
+  //     }
+  //     return CircularProgressIndicator();
+  //   },
+  // );
+  // Widget buildTextData(String myText) => Text(
+  //       "$myText",
+  //       textAlign: TextAlign.center,
+  //       style: TextStyle(
+  //           fontSize: 25.00, fontWeight: FontWeight.w500, color: Colors.purple),
+  //     );
 
-  Container buildDot() {
-    return Container(
-              margin: EdgeInsets.only(right: 5),
-              height: 6,
-              width: 6,
-              decoration: BoxDecoration(
-                color: kPrimaryColor,
-                borderRadius: BorderRadius.circular(3)
-              ),
-            );
-  }
+//   Container buildDot() {
+//     return Container(
+//               margin: EdgeInsets.only(right: 5),
+//               height: 6,
+//               width: 6,
+//               decoration: BoxDecoration(
+//                 color: kPrimaryColor,
+//                 borderRadius: BorderRadius.circular(3)
+//               ),
+//             );
+//   }
+// }
+
 }
-

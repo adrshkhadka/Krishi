@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:krishibandu/constants.dart';
+import 'package:krishibandu/screens/home/home_page.dart';
 
 import '../../../components/default_buttons.dart';
+import '../../../models/demo_model.dart';
+import '../../../repository/Api/demo_repository.dart';
 
-class Body extends StatelessWidget {
+class Body extends StatefulWidget {
   const Body({Key? key}) : super(key: key);
+  
+  @override
+  State<Body> createState() => _BodyState();
+}
 
+class _BodyState extends State<Body> {
+  Future<DemoModel>? futureModel;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -28,9 +38,15 @@ class Body extends StatelessWidget {
               padding: EdgeInsets.all(40),
               child: DefaultButton(
                 text: "Login",
-                press: (){},
+                press: (){
+                  // setState(() {
+                  //   futureModel = DemoRepo().fetchData();
+                  // });
+                  Navigator.pushNamed(context, HomePage.routeName);
+                },
                 
               ),
+              // buildFutureTextData()
             )
           ],
         ),
@@ -65,3 +81,35 @@ class SignInForm extends StatelessWidget {
     );
   }
 }
+
+// buildFutureTextData()=> FutureBuilder<DemoModel>(
+//     future: futureModel,
+//     builder: (context,snapshot){
+//       if(snapshot.hasData)
+//       {
+//         return buildTextData(snapshot.data!.image!);
+//       }
+//       else if(snapshot.hasError){
+//         return buildTextData("Error");
+//       }
+//       return CircularProgressIndicator();
+//     },
+//   );
+//   Widget buildTextData(String myText) => Text(
+//         "$myText",
+//         textAlign: TextAlign.center,
+//         style: TextStyle(
+//             fontSize: 25.00, fontWeight: FontWeight.w500, color: Colors.purple),
+//       );
+
+//   Container buildDot() {
+//     return Container(
+//               margin: EdgeInsets.only(right: 5),
+//               height: 6,
+//               width: 6,
+//               decoration: BoxDecoration(
+//                 color: kPrimaryColor,
+//                 borderRadius: BorderRadius.circular(3)
+//               ),
+//             );
+//   }

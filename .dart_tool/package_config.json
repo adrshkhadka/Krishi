@@ -8,6 +8,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "badges",
+      "rootUri": "file:///C:/Users/PREDATOR/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/badges-3.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "boolean_selector",
       "rootUri": "file:///C:/Users/PREDATOR/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/boolean_selector-2.1.0",
       "packageUri": "lib/",
@@ -218,7 +224,7 @@
       "languageVersion": "2.17"
     }
   ],
-  "generated": "2023-04-08T17:04:55.415594Z",
+  "generated": "2023-04-18T07:29:25.105280Z",
   "generator": "pub",
   "generatorVersion": "2.17.0"
 }
