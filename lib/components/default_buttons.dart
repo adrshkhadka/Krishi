@@ -23,7 +23,7 @@ class DefaultButton extends StatelessWidget {
         child: ElevatedButton(
           onPressed: press,
           style: ElevatedButton.styleFrom(
-              primary: kPrimaryLightColor,
+              primary: kPrimaryColor,
               textStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
           child: Text(text),
         ),

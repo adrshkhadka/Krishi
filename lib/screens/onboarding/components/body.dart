@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:krishibandu/constants.dart';
 import 'package:krishibandu/repository/Api/demo_repository.dart';
+import 'package:krishibandu/screens/sign_in/sign_in_screen.dart';
+import 'package:krishibandu/screens/sign_up/sign_up.dart';
 
 import '../../../components/default_buttons.dart';
 import '../../../models/demo_model.dart';
@@ -18,16 +20,16 @@ class _BodyState extends State<Body> {
    List<Map<String, String>> onboardingData = [
     {
       "text": "Skip",
-      "image": "assets/images/doctor.jpg"
+      "image": "assets/images/onboarding.JPG"
     },
     {
       "text":
           "We help people conect with store \naround United State of America",
-      "image": "assets/images/doctor.jpg"
+      "image": "assets/images/onboarding.JPG"
     },
     {
       "text": "We show the easy way to shop. \nJust stay at home with us",
-      "image": "assets/images/doctor.jpg"
+      "image": "assets/images/onboarding.JPG"
     },
   ];
   Future<DemoModel>? futureModel;
@@ -47,7 +49,7 @@ class _BodyState extends State<Body> {
               });
             },
             itemCount: onboardingData.length,itemBuilder: (context, index) => OnboardingContent(
-            image: "assets/images/doctor.jpg",
+            image: "assets/images/onboarding_1.jpg",
             text: "Skip",
           )
           ), 
@@ -69,12 +71,13 @@ class _BodyState extends State<Body> {
               DefaultButton(
                 text: "Next",
                 press: (){
-                  setState(() {
-                    futureModel = fetchData();
-                  });
+                  // setState(() {
+                  //   futureModel = fetchData();
+                  // });
+                  Navigator.pushNamed(context, SignUpScreen.routeName);
                 },
               ),
-              buildFutureTextData()
+              // buildFutureTextData()
             ],
           ),
         )
